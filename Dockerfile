@@ -22,17 +22,17 @@ RUN sudo pacman -Syu --noconfirm \
 RUN yay -Syu --noconfirm \
     mugshot
 
-RUN mkdir ${HOME}.themes
-COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush ${HOME}.themes
-COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush-xfwm ${HOME}.themes
+RUN mkdir ${HOME}/.themes
+COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush ${HOME}/.themes
+COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush-xfwm ${HOME}/.themes
 
-RUN mkdir -p ${HOME}.local/share/icons
-COPY ./src/files/Nordzy-cyan-dark-MOD ${HOME}.local/share/icons
+RUN mkdir -p ${HOME}/.local/share/icons
+COPY ./src/files/Nordzy-cyan-dark-MOD ${HOME}/.local/share/icons
 
-COPY ./src/files/fonts ${HOME}.local/share
+COPY ./src/files/fonts ${HOME}/.local/share
 
 RUN sudo pacman -Syu --noconfirm \
     kvantum-qt5
-COPY ./src/files/Kvantum ${HOME}.config
+COPY ./src/files/Kvantum ${HOME}/.config
 
 RUN xfconf-query -c xsettings -p /Net/ThemeName -s Everblush
