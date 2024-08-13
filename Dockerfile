@@ -1,6 +1,6 @@
 FROM lscr.io/linuxserver/webtop:arch-xfce
 
-ENV HOME /home/kasm-default-profile
+ENV HOME /home/kasm-user
 WORKDIR $HOME
 
 USER root
