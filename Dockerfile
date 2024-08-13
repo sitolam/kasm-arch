@@ -9,7 +9,7 @@ COPY ./dbus/system.conf /etc/dbus-1/
 COPY ./dbus/run.sh /etc/init/
 RUN sudo pacman -Syu --noconfirm dbus
 ENTRYPOINT ["/etc/init/run.sh"]
-
+ENV DBUS_SESSION_BUS_ADDRESS="unix:path=/var/run/dbus/system_bus_socket"
 
 RUN sudo pacman -Syu --noconfirm --needed \
     git \
