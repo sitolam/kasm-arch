@@ -9,11 +9,10 @@ RUN sudo pacman -Syu --noconfirm --needed \
     git \
     base-devel
 
-RUN git clone https://aur.archlinux.org/yay.git \
-    && cd yay 
-
 USER 1000
-RUN makepkg -si --noconfirm \
+RUN git clone https://aur.archlinux.org/yay.git \
+    && cd yay \
+    && makepkg -si --noconfirm \
     && cd .. \
     && rm -rf yay
 USER root
