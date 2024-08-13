@@ -5,7 +5,7 @@ WORKDIR $HOME
 
 USER 1000
 
-COPY ./dbus/system.conf /etc/dbus-1/
+COPY ./dbus/system.conf /usr/share/dbus-1/system.conf
 COPY ./dbus/run.sh /etc/init/
 RUN sudo pacman -Syu --noconfirm dbus
 ENTRYPOINT ["/etc/init/run.sh"]
