@@ -35,4 +35,4 @@ RUN sudo pacman -Syu --noconfirm \
     kvantum-qt5
 COPY ./src/files/Kvantum ${HOME}/.config
 
-RUN xfconf-query -c xsettings -p /Net/ThemeName -s Everblush
+RUN DBUS_SESSION_BUS_ADDRESS=unix:path=/tmp/dbus-vHL7z4GFCR,guid=a6329b1c35dbd7885631f6d966bb86d4 && xfconf-query -c xsettings -p /Net/ThemeName -s Everblush
