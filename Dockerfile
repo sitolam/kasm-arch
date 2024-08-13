@@ -10,11 +10,13 @@ RUN sudo pacman -Syu --noconfirm --needed \
     base-devel
 
 RUN git clone https://aur.archlinux.org/yay.git \
-    && cd yay \
-    && makepkg -si --noconfirm \
+    && cd yay 
+
+USER 1000
+RUN makepkg -si --noconfirm \
     && cd .. \
     && rm -rf yay
-
+USER root
 
 RUN sudo pacman -Syu --noconfirm \
     xfce4-terminal
