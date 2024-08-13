@@ -3,19 +3,17 @@ FROM lscr.io/linuxserver/webtop:arch-xfce
 ENV HOME /home/kasm-user
 WORKDIR $HOME
 
-USER root
+USER 1000
 
 RUN sudo pacman -Syu --noconfirm --needed \
     git \
     base-devel
 
-USER 1000
 RUN git clone https://aur.archlinux.org/yay.git \
     && cd yay \
     && makepkg -si --noconfirm \
     && cd .. \
     && rm -rf yay
-USER root
 
 RUN sudo pacman -Syu --noconfirm \
     xfce4-terminal
