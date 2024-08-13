@@ -15,6 +15,8 @@ RUN git clone https://aur.archlinux.org/yay.git \
     && cd .. \
     && rm -rf yay
 
+WORKDIR $HOME
+
 RUN sudo pacman -Syu --noconfirm \
     xfce4-terminal
 RUN yay -Syu --noconfirm \
