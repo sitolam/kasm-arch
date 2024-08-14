@@ -97,6 +97,9 @@ RUN sudo pacman -Syu --noconfirm \
     fastfetch
 COPY ./src/configs/fastfetch ${HOME}/.config/fastfetch
 
+RUN sudo pacman -Syu --noconfirm \
+    ttf-jetbrains-mono-nerd
+
 
 COPY ./src/configs/autostart ${HOME}/.config/autostart
 RUN sudo chmod +x ${HOME}/.config/autostart/*
@@ -113,4 +116,5 @@ RUN sudo rm -rf \
     /config/.cache \
     /tmp/* \
     /var/cache/pacman/pkg/* \
-    /var/lib/pacman/sync/*
+    /var/lib/pacman/sync/* \
+    ${HOME}/.cache
