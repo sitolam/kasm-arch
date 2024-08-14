@@ -36,5 +36,13 @@ RUN sudo pacman -Syu --noconfirm \
     kvantum-qt5
 COPY ./src/files/Kvantum ${HOME}/.config/Kvantum
 
-COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
 
+RUN git clone https://github.com/vinceliuice/McMojave-cursors ${HOME}/McMojave-cursors \
+    && cd ${HOME}/McMojave-cursors \
+    && sudo ./install.sh \
+    && cd .. \
+    && sudo rm -rf ${HOME}/McMojave-cursors
+
+
+
+COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
