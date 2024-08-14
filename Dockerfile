@@ -90,6 +90,9 @@ COPY ./src/configs/.bashrc ${HOME}/.bashrc
 COPY ./src/configs/autostart ${HOME}/.config/autostart
 RUN sudo chmod +x ${HOME}/.config/autostart/*
 
+
+COPY ./src/configs/Anki2 ${HOME}/.local/share/Anki2
+
 COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
 
 RUN sudo chown -R 1000:1000 ${HOME}
