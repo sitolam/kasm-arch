@@ -6,8 +6,8 @@ ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $STARTUPDIR/install
 
 
-ENV home /home/kasm-user
-WORKDIR $home
+ENV HOME /home/kasm-user
+WORKDIR $HOME
 
 USER 1000
 
@@ -16,37 +16,37 @@ RUN sudo pacman -Syu --noconfirm --needed \
     base-devel
 
 RUN echo $(pwd)
-RUN git clone https://aur.archlinux.org/yay.git ${home}/yay \
-    && cd ${home}/yay \
+RUN git clone https://aur.archlinux.org/yay.git ${HOME}/yay \
+    && cd ${HOME}/yay \
     && makepkg -si --noconfirm \
     && cd .. \
-    && sudo rm -rf ${home}/yay
+    && sudo rm -rf ${HOME}/yay
 
-WORKDIR $home
+WORKDIR $HOME
 
 RUN sudo pacman -Syu --noconfirm \
     xfce4-terminal
 RUN yay -Syu --noconfirm \
     mugshot
 
-RUN mkdir ${home}/.themes
-COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush ${home}/.themes
-COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush-xfwm ${home}/.themes
+RUN mkdir ${HOME}/.themes
+COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush ${HOME}/.themes
+COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush-xfwm ${HOME}/.themes
 
-RUN mkdir -p ${home}/.local/share/icons
-COPY ./src/files/Nordzy-cyan-dark-MOD ${home}/.local/share/icons
+RUN mkdir -p ${HOME}/.local/share/icons
+COPY ./src/files/Nordzy-cyan-dark-MOD ${HOME}/.local/share/icons
 
-COPY ./src/files/fonts ${home}/.local/share
+COPY ./src/files/fonts ${HOME}/.local/share
 
 RUN sudo pacman -Syu --noconfirm \
     kvantum-qt5
-COPY ./src/files/Kvantum ${home}/.config
+COPY ./src/files/Kvantum ${HOME}/.config
 
-COPY ./src/configs/xfce4 ${home}/.config
-
-
+COPY ./src/configs/xfce4 ${HOME}/.config
 
 
+
+ENV HOME /home/kasm-default-profile
 RUN chown 1000:0 $HOME
 RUN $STARTUPDIR/set_user_permission.sh $HOME
 
