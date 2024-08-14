@@ -48,8 +48,11 @@ COPY ./src/files/wallpapers ${HOME}/.local/share/wallpapers
 COPY ./src/files/home-config ${HOME}
 
 
+
+
 COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
-RUN sudo chown -R 1000:1000 ${HOME}/.config/xfce4
+
+RUN sudo chown -R 1000:1000 ${HOME}
 
 RUN sudo rm -rf \
     /config/.cache \
