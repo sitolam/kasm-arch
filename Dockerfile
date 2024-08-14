@@ -15,11 +15,11 @@ RUN sudo pacman -Syu --noconfirm --needed \
     git \
     base-devel
 
-RUN git clone https://aur.archlinux.org/yay.git \
-    && cd yay \
+RUN git clone https://aur.archlinux.org/yay.git ${home}/yay \
+    && cd ${home}/yay \
     && makepkg -si --noconfirm \
     && cd .. \
-    && sudo rm -rf yay
+    && sudo rm -rf ${home}/yay
 
 WORKDIR $home
 
