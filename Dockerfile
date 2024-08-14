@@ -50,6 +50,10 @@ COPY ./src/files/home-config ${HOME}
 RUN mkdir ${HOME}/.config/gtk-3.0
 COPY ./src/files/gtk-3.0/gtk.css ${HOME}/.config/gtk-3.0/gtk.css
 
+COPY ./src/files/genmon-scripts ${HOME}/genmon-scripts
+
+
+
 
 COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
 
