@@ -46,7 +46,6 @@ COPY ./src/configs/xfce4 ${HOME}/.config
 
 
 
-ENV HOME /home/kasm-default-profile
 RUN chown 1000:0 $HOME
 RUN $STARTUPDIR/set_user_permission.sh $HOME
 
