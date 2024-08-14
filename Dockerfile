@@ -24,17 +24,17 @@ RUN yay -Syu --noconfirm \
     mugshot
 
 RUN mkdir ${HOME}/.themes
-COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush ${HOME}/.themes
-COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush-xfwm ${HOME}/.themes
+COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush ${HOME}/.themes/Everblush
+COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush-xfwm ${HOME}/.themes/Everblush
 
 RUN mkdir -p ${HOME}/.local/share/icons
 COPY ./src/files/Nordzy-cyan-dark-MOD ${HOME}/.local/share/icons
 
-COPY ./src/files/fonts ${HOME}/.local/share
+COPY ./src/files/fonts ${HOME}/.local/share/fonts
 
 RUN sudo pacman -Syu --noconfirm \
     kvantum-qt5
-COPY ./src/files/Kvantum ${HOME}/.config
+COPY ./src/files/Kvantum ${HOME}/.config/Kvantum
 
-COPY ./src/configs/xfce4 ${HOME}/.config
+COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
 
