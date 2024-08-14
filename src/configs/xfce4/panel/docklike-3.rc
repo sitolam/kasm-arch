@@ -10,3 +10,4 @@ pinned=
 indicatorColorFromTheme=true
 keyComboActive=false
 keyAloneActive=false
+onlyDisplayVisible=true
