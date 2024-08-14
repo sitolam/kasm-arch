@@ -98,7 +98,8 @@ RUN sudo pacman -Syu --noconfirm \
 COPY ./src/configs/fastfetch ${HOME}/.config/fastfetch
 
 RUN sudo pacman -Syu --noconfirm \
-    ttf-jetbrains-mono-nerd
+    ttf-jetbrains-mono-nerd \
+    ttf-ms-win11-auto
 
 
 COPY ./src/configs/autostart ${HOME}/.config/autostart
