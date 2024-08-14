@@ -92,6 +92,11 @@ RUN sudo pacman -Syu --noconfirm \
 COPY ./src/configs/fish/config.fish ${HOME}/.config/fish/config.fish
 RUN sudo chsh -s /usr/bin/fish kasm-user
 
+RUN sudo pacman -Syu --noconfirm \
+    fastfetch
+COPY ./src/configs/fastfetch ${HOME}/.config/fastfetch
+
+
 COPY ./src/configs/autostart ${HOME}/.config/autostart
 RUN sudo chmod +x ${HOME}/.config/autostart/*
 
