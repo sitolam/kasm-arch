@@ -70,6 +70,7 @@ COPY ./src/files/eww ${HOME}/.config/eww
 
 RUN yay -Syu --noconfirm \
     findex-bin	
+COPY ./src/files/findex ${HOME}/.config/findex
 
 
 
