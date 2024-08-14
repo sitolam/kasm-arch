@@ -46,6 +46,7 @@ RUN git clone https://github.com/vinceliuice/McMojave-cursors ${HOME}/McMojave-c
 COPY ./src/files/wallpapers ${HOME}/.local/share/wallpapers
 
 COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
+RUN sudo chown -R 1000:1000 ${HOME}/.config/xfce4
 
 RUN sudo rm -rf \
     /config/.cache \
