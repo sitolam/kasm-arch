@@ -46,3 +46,9 @@ RUN git clone https://github.com/vinceliuice/McMojave-cursors ${HOME}/McMojave-c
 
 
 COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
+
+RUN rm -rf \
+    /config/.cache \
+    /tmp/* \
+    /var/cache/pacman/pkg/* \
+    /var/lib/pacman/sync/*
