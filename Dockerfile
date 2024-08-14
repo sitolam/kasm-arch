@@ -83,7 +83,7 @@ RUN yay -Syu --noconfirm \
 
 RUN sudo pacman -Syu --noconfirm \
     neovim
-COPY ./src/configs/nvim ${HOME}/.configs/nvim
+COPY ./src/configs/nvim ${HOME}/.config/nvim
 
 COPY ./src/configs/.bashrc ${HOME}/.bashrc
 
