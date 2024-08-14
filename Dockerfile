@@ -79,7 +79,8 @@ RUN yay -Syu --noconfirm \
     thorium-browser-bin \
     flowtime \
     visual-studio-code-bin \
-    anki-bin
+    anki-bin \
+    mpv
 
 RUN sudo pacman -Syu --noconfirm \
     neovim
