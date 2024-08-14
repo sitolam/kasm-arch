@@ -79,13 +79,24 @@ RUN yay -Syu --noconfirm \
     thorium-browser-bin \
     flowtime \
     visual-studio-code-bin \
-    anki-bin
+    anki-bin \
+    mpv
 
 RUN sudo pacman -Syu --noconfirm \
     neovim
-COPY ./src/configs/nvim ${HOME}/.configs/nvim
+COPY ./src/configs/nvim ${HOME}/.config/nvim
 
 COPY ./src/configs/.bashrc ${HOME}/.bashrc
+
+RUN sudo pacman -Syu --noconfirm \
+    fish
+COPY ./src/configs/fish/config.fish ${HOME}/.config/fish/config.fish
+RUN sudo chsh -s /usr/bin/fish kasm-user
+
+RUN sudo pacman -Syu --noconfirm \
+    fastfetch
+COPY ./src/configs/fastfetch ${HOME}/.config/fastfetch
+
 
 COPY ./src/configs/autostart ${HOME}/.config/autostart
 RUN sudo chmod +x ${HOME}/.config/autostart/*
