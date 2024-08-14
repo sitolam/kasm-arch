@@ -99,6 +99,7 @@ COPY ./src/configs/fastfetch ${HOME}/.config/fastfetch
 
 RUN sudo pacman -Syu --noconfirm \
     ttf-jetbrains-mono-nerd \
+    && yay -Syu --noconfirm \
     ttf-ms-win11-auto
 
 
