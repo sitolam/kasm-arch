@@ -15,6 +15,7 @@ RUN sudo pacman -Syu --noconfirm --needed \
     git \
     base-devel
 
+RUN echo $(pwd)
 RUN git clone https://aur.archlinux.org/yay.git ${home}/yay \
     && cd ${home}/yay \
     && makepkg -si --noconfirm \
