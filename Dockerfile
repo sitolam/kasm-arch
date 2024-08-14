@@ -5,17 +5,9 @@ WORKDIR $HOME
 
 USER 1000
 
-COPY ./dbus/system.conf /usr/share/dbus-1/system.conf
-COPY ./dbus/run.sh /etc/init/
-RUN sudo pacman -Syu --noconfirm dbus
-ENTRYPOINT ["/etc/init/run.sh"]
-ENV DBUS_SESSION_BUS_ADDRESS="unix:path=/var/run/dbus/system_bus_socket"
-
 RUN sudo pacman -Syu --noconfirm --needed \
     git \
     base-devel
-
-WORKDIR $HOME
 
 RUN git clone https://aur.archlinux.org/yay.git \
     && cd yay \
@@ -43,4 +35,4 @@ RUN sudo pacman -Syu --noconfirm \
     kvantum-qt5
 COPY ./src/files/Kvantum ${HOME}/.config
 
-RUN xfconf-query -c xsettings -p /Net/ThemeName -s Everblush
+RUN sed -i 's/Adwaita/Everblush/g'
