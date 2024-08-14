@@ -72,6 +72,7 @@ COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
 
 RUN sudo chown -R 1000:1000 ${HOME}
 
+RUN yay -Sc --noconfirm
 RUN sudo rm -rf \
     /config/.cache \
     /tmp/* \
