@@ -14,17 +14,17 @@
     <property name="cycle_raise" type="bool" value="false"/>
     <property name="borderless_maximize" type="bool" value="false"/>
     <property name="workspace_names" type="array">
-      <value type="string" value=""/>
-      <value type="string" value=""/>
-      <value type="string" value=""/>
-      <value type="string" value=""/>
-      <value type="string" value=""/>
-      <value type="string" value=""/>
-      <value type="string" value=""/>
-      <value type="string" value=""/>
-      <value type="string" value=""/>
-      <value type="string" value=""/>
-      <value type="string" value="Workspace 11"/>
+      <value type="string" value="1"/>
+      <value type="string" value="2"/>
+      <value type="string" value="3"/>
+      <value type="string" value="4"/>
+      <value type="string" value="5"/>
+      <value type="string" value="6"/>
+      <value type="string" value="7"/>
+      <value type="string" value="8"/>
+      <value type="string" value="9"/>
+      <value type="string" value="10"/>
+      <value type="string" value="11"/>
     </property>
     <property name="activate_action" type="string" value="bring"/>
     <property name="box_move" type="bool" value="false"/>
@@ -97,9 +97,9 @@
     <property name="horiz_scroll_opacity" type="bool" value="false"/>
     <property name="vblank_mode" type="string" value="auto"/>
     <property name="zoom_pointer" type="bool" value="true"/>
-    <property name="margin_bottom" type="int" value="12"/>
-    <property name="margin_left" type="int" value="72"/>
-    <property name="margin_top" type="int" value="12"/>
-    <property name="margin_right" type="int" value="12"/>
+    <property name="margin_bottom" type="int" value="0"/>
+    <property name="margin_left" type="int" value="0"/>
+    <property name="margin_top" type="int" value="0"/>
+    <property name="margin_right" type="int" value="0"/>
   </property>
 </channel>
