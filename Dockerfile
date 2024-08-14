@@ -72,7 +72,12 @@ RUN yay -Syu --noconfirm \
     findex-bin	
 COPY ./src/files/findex ${HOME}/.config/findex
 
+RUN sudo pacman -Syu --noconfirm \
+    neofetch
+COPY ./src/files/neofetch ${HOME}/.config/neofetch
 
+
+COPY ./src/configs/.bashrc ${HOME}/.bashrc
 
 COPY ./src/configs/autostart ${HOME}/.config/autostart
 RUN sudo chmod +x ${HOME}/.config/autostart/*
