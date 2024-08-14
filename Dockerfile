@@ -113,4 +113,5 @@ RUN sudo rm -rf \
     /config/.cache \
     /tmp/* \
     /var/cache/pacman/pkg/* \
-    /var/lib/pacman/sync/*
+    /var/lib/pacman/sync/* \
+    ${HOME}/.cache
