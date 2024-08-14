@@ -68,6 +68,14 @@ RUN yay -Syu --noconfirm \
     eww
 COPY ./src/files/eww ${HOME}/.config/eww
 
+RUN yay -Syu --noconfirm \
+    findex-bin	
+
+
+
+COPY ./src/configs/autostart ${HOME}/.config/autostart
+RUN sudo chmod +x ${HOME}/.config/autostart/*
+
 COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
 
 RUN sudo chown -R 1000:1000 ${HOME}
