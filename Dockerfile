@@ -4,7 +4,7 @@ USER root
 ENV HOME /home/kasm-default-profile
 ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $STARTUPDIR/install
-WORKDIR $HOME
+
 
 ENV home /home/kasm-user
 WORKDIR $home
