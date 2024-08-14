@@ -58,7 +58,15 @@ RUN sudo pacman -Syu --noconfirm \
 RUN yay -Syu --noconfirm \
     xfce4-docklike-plugin-ng-git
 
-
+RUN sudo pacman -Syu --noconfirm \
+    alsa-utils \
+    brightnessctl \
+    jq \
+    playerctl
+RUN yay -Syu --noconfirm \
+    rustup \
+    eww
+COPY ./src/files/eww ${HOME}/.config/eww
 
 COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
 
