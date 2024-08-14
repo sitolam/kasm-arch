@@ -1,10 +1,4 @@
 FROM lscr.io/linuxserver/webtop:arch-xfce
-USER root
-
-ENV HOME /home/kasm-default-profile
-ENV STARTUPDIR /dockerstartup
-ENV INST_SCRIPTS $STARTUPDIR/install
-
 
 ENV HOME /home/kasm-user
 WORKDIR $HOME
@@ -45,4 +39,6 @@ COPY ./src/files/Kvantum ${HOME}/.config
 COPY ./src/configs/xfce4 ${HOME}/.config
 
 
-USER 1000
+# ports and volumes
+EXPOSE 3000
+VOLUME /config
