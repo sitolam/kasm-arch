@@ -43,7 +43,7 @@ RUN git clone https://github.com/vinceliuice/McMojave-cursors ${HOME}/McMojave-c
     && cd .. \
     && sudo rm -rf ${HOME}/McMojave-cursors
 
-
+COPY ./src/files/wallpapers ${HOME}/.local/share/wallpapers
 
 COPY ./src/configs/xfce4 ${HOME}/.config/xfce4
 
