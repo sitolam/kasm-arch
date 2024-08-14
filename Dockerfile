@@ -76,6 +76,13 @@ RUN sudo pacman -Syu --noconfirm \
     neofetch
 COPY ./src/files/neofetch ${HOME}/.config/neofetch
 
+RUN yay -Syu --noconfirm \
+    thorium-browser-bin \
+    flowtime \
+    visual-studio-code-bin \
+    anki-bin
+
+
 
 COPY ./src/configs/.bashrc ${HOME}/.bashrc
 
