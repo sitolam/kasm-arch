@@ -87,6 +87,11 @@ COPY ./src/configs/nvim ${HOME}/.configs/nvim
 
 COPY ./src/configs/.bashrc ${HOME}/.bashrc
 
+RUN sudo pacman -Syu --noconfirm \
+    fish
+COPY ./src/configs/fish/config.fish ${HOME}/.config/fish/config.fish
+RUN sudo chsh -s /usr/bin/fish kasm-user
+
 COPY ./src/configs/autostart ${HOME}/.config/autostart
 RUN sudo chmod +x ${HOME}/.config/autostart/*
 
