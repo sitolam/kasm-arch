@@ -53,9 +53,9 @@ COPY ./src/files/gtk-3.0/gtk.css ${HOME}/.config/gtk-3.0/gtk.css
 COPY ./src/files/genmon-scripts ${HOME}/genmon-scripts
 
 RUN sudo pacman -Syu --noconfirm \
-    xfce4-whiskermenu-plugin 
+    xfce4-whiskermenu-plugin \
+    xfce4-genmon-plugin
 RUN yay -Syu --noconfirm \
-    xfce4-panel-genmon-ng-git \
     xfce4-docklike-plugin-ng-git
 
 
