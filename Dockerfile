@@ -82,7 +82,9 @@ RUN yay -Syu --noconfirm \
     visual-studio-code-bin \
     anki-bin
 
-
+RUN sudo pacman -Syu --noconfirm \
+    neovim
+COPY ./src/configs/nvim ${HOME}/.configs/nvim
 
 COPY ./src/configs/.bashrc ${HOME}/.bashrc
 
