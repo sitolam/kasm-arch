@@ -35,4 +35,4 @@ RUN sudo pacman -Syu --noconfirm \
     kvantum-qt5
 COPY ./src/files/Kvantum ${HOME}/.config
 
-RUN sed -i 's/Adwaita/Everblush/g'
+RUN sed -i 's/Adwaita/Everblush/g' ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
