@@ -28,7 +28,7 @@ COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush ${HOME}/.themes/Everblush
 COPY ./src/files/GTK-XFWM-Everblush-Theme/Everblush-xfwm ${HOME}/.themes/Everblush
 
 RUN mkdir -p ${HOME}/.local/share/icons
-COPY ./src/files/Nordzy-cyan-dark-MOD ${HOME}/.local/share/icons
+COPY ./src/files/Nordzy-cyan-dark-MOD ${HOME}/.local/share/icons/Nordzy-cyan-dark-MOD
 
 COPY ./src/files/fonts ${HOME}/.local/share/fonts
 
